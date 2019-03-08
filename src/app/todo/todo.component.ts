@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TODO } from './todo';
 
 @Component({
   selector: 'app-todo',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  todoList: TODO[];
+  todoObject: TODO;
+
+  name: string;
+  age: number;
+
+  mytodo: TODO;
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.todoList=[];
+    this.todoObject = new TODO("", "");
+  }
+
+  addTodoToList() {
+    console.log(this.todoObject);
+    this.todoList.push(new TODO(this.todoObject.item, this.todoObject.status));
   }
 
 }

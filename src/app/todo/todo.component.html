@@ -1,3 +1,22 @@
-<p>
-  todo works!
-</p>
+<div>
+  <form>
+    Todo Item:<br>
+    <input type="text"  [(ngModel)]="todoObject.item" name="item"><br>
+    Status:<br>
+    <input type="text" [(ngModel)]="todoObject.status" name="status"><br>
+    <button type="button" (click)="addTodoToList()">Send</button>
+  </form>
+</div>
+
+<div>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let todoItem of todoList">
+      <td>{{ todoItem.item }}</td>
+      <td>{{ todoItem.status }}</td>
+    </tr>
+  </table>
+</div>
