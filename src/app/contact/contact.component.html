@@ -1,0 +1,18 @@
+<div *ngIf="showContactForm">
+<form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname"><br>
+  Email:<br>
+  <input type="text" name="email"><br>
+  Message:<br>
+  <textarea rows="4" cols="50">type your Message here</textarea><br>
+  <button type="button" (click)="showMessagefn()">Send</button>
+
+</form>
+</div>
+<br>
+<div *ngIf="showMessage">
+  <p>Thank you</p>
+</div>
